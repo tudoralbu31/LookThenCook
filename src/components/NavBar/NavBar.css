@@ -1,0 +1,52 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    border: 1px ridge;
+}
+
+.button-wrapper {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title {
+    width: 20%;
+    height: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: underline;
+}
+
+.burger-menu {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .button-wrapper {
+        width: 70%;
+    }
+
+    .title {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .button-wrapper {
+        width: 70%;
+        display: none;
+    }
+
+    .title {
+        width: 40%;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .burger-element {
+        background-color: black;
+    }
+}

@@ -1,0 +1,12 @@
+.recipe-wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 500px) {
+    .recipe-wrapper {
+        flex-direction: column;
+    }
+}
