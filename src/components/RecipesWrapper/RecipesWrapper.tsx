@@ -2,10 +2,7 @@ import { AppState } from "../../store/types";
 import "./RecipesWrapper.css";
 import { Recipe } from "../Recipe/Recipe";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  changeRecipeModalValues,
-  handleRecipeModal,
-} from "../../store/actions";
+import { handleRecipeModal, updateOpenModalValues } from "../../store/actions";
 import { RecipeModal } from "../RecipeModal/RecipeModal";
 import { useState } from "react";
 
@@ -15,7 +12,7 @@ export const RecipesWrapper = () => {
   const openRecipeModal = (element: any) => {
     dispatch(handleRecipeModal(true));
     dispatch(
-      changeRecipeModalValues({
+      updateOpenModalValues({
         name: element.name,
         time: element.time,
         difficulty: element.difficulty,

@@ -2,7 +2,7 @@ export type AppState = {
   recipe: Recipe[];
   recipeAdderModal: boolean;
   recipeModal: boolean;
-  recipeModalState: Recipe;
+  openModalValues: Recipe;
 };
 
 export type Recipe = {
@@ -11,4 +11,5 @@ export type Recipe = {
   description: string;
   difficulty: string;
   ingredients: string;
+  image?: string;
 };

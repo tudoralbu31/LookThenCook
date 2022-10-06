@@ -1,15 +1,15 @@
-import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import "./App.css";
-import { NavBar } from "./components/NavBar/NavBar";
 import { RecipeModal } from "./components/RecipeModal/RecipeModal";
 import { Router } from "./router/Router";
 import { AppState } from "./store/types";
+import recipes from "./data.json";
 
 function App() {
+  localStorage.setItem("recipes", JSON.stringify(recipes));
   const open = useSelector((state: AppState) => state.recipeModal);
   const recipeModalState = useSelector(
-    (state: AppState) => state.recipeModalState
+    (state: AppState) => state.openModalValues
   );
 
   return (

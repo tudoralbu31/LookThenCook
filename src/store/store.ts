@@ -5,10 +5,11 @@ import {
 } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { Recipe } from "./types";
-import RECIPES from "../constants";
+
+const startingRecipes = JSON.parse(localStorage.getItem("recipes") as string);
 
 const initialState = {
-  recipe: [],
+  recipe: startingRecipes,
   recipeAdderModal: false,
   recipeModal: false,
   recipeModalState: {
@@ -65,7 +66,7 @@ export const recipeModalReducer = (
   }
 };
 
-export const recipeModalChangeReducer = (
+export const openModalValuesReducer = (
   state: Recipe = initialState.recipeModalState,
   action: AnyAction
 ): Recipe => {
@@ -73,7 +74,7 @@ export const recipeModalChangeReducer = (
     return initialState.recipeModalState;
   }
   switch (action.type) {
-    case "HANDLE_MODAL_VALUES_CHANGE":
+    case "UPDATE_OPEN_MODAL_VALUES":
       return action.recipe;
     default:
       return state;
@@ -84,7 +85,7 @@ const reducers = combineReducers({
   recipe: recipeReducer,
   recipeAdderModal: recipeAdderModalReducer,
   recipeModal: recipeModalReducer,
-  recipeModalState: recipeModalChangeReducer,
+  openModalValues: openModalValuesReducer,
 });
 
 export const store = createStore(reducers, initialState, composeWithDevTools());

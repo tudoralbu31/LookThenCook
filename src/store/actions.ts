@@ -1,9 +1,11 @@
+import axios from "axios";
 import { Dispatch } from "react";
+import { useDispatch } from "react-redux";
 import { Recipe } from "./types";
 export const ADD_RECIPES = "ADD_RECIPES";
 export const HANDLE_ADDER_MODAL = "HANDLE_ADDER_MODAL";
 export const HANDLE_RECIPE_MODAL = "HANDLE_RECIPE_MODAL";
-export const HANDLE_MODAL_VALUES_CHANGE = "HANDLE_MODAL_VALUES_CHANGE";
+export const UPDATE_OPEN_MODAL_VALUES = "UPDATE_OPEN_MODAL_VALUES";
 
 export const addRecipe = (recipe: Recipe) => ({
   type: ADD_RECIPES,
@@ -20,7 +22,7 @@ export const handleRecipeModal = (open: boolean) => ({
   open,
 });
 
-export const changeRecipeModalValues = (recipe: Recipe) => ({
-  type: HANDLE_MODAL_VALUES_CHANGE,
+export const updateOpenModalValues = (recipe: Recipe) => ({
+  type: UPDATE_OPEN_MODAL_VALUES,
   recipe,
 });

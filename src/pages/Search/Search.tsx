@@ -1,10 +1,7 @@
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  changeRecipeModalValues,
-  handleRecipeModal,
-} from "../../store/actions";
+import { updateOpenModalValues, handleRecipeModal } from "../../store/actions";
 import { RecipeModal } from "../../components/RecipeModal/RecipeModal";
 import { Recipe } from "../../components/Recipe/Recipe";
 import { AppState } from "../../store/types";
@@ -17,7 +14,7 @@ export const Search = () => {
   const openRecipeModal = (element: any) => {
     dispatch(handleRecipeModal(true));
     dispatch(
-      changeRecipeModalValues({
+      updateOpenModalValues({
         name: element.name,
         time: element.time,
         difficulty: element.difficulty,
@@ -41,9 +38,11 @@ export const Search = () => {
       <div className="recipe-list">
         {recipes.map((e) => {
           if (
+            searchedValue === e.name ||
             searchedValue === e.name.toLocaleLowerCase() ||
             searchedValue === e.ingredients ||
-            searchedValue === e.difficulty ||
+            (searchedValue === e.difficulty && e.difficulty !== "") ||
+            searchedValue === e.difficulty.toLocaleLowerCase() ||
             searchedValue === e.time.toString()
           ) {
             return (
