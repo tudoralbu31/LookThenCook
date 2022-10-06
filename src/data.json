@@ -1,0 +1,18 @@
+{
+  "recipes": [
+    {
+      "name": "Spaghetti Carbonara",
+      "time": 20,
+      "dificulty": "medium",
+      "ingredients": "spaghetti, eggs, cooking cream, parmesan, bacon, onion",
+      "description": "Boil 100 grams of spaghetti for 8 minutes. In the meantime, cook the bacon in a span for 6 minutes at medium fire. After that, add the chopped onion and cook it until it starts to chage its color. After this add some white wine, cook 2 minutes and then add the cooking cream and cook for 3 more minutes. Now add the boiled spaghetti, mix and right after you stop the fire, add 2 eggs and the parmesan. Job done"
+    },
+    {
+      "name": "Boiled eggs with toast",
+      "time": 5,
+      "dificulty": "easy",
+      "ingredients": "eggs, toats, butter",
+      "description": "Boild the eggs for 3 minutes. In the meantime, add some bread in the toaster for 2 minutes and after that put butter on it. "
+    }
+  ]
+}

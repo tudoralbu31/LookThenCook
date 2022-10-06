@@ -1,13 +1,14 @@
 export type AppState = {
-    recipe: Recipe[],
-    recipeAdderModal: boolean,
-    recipeModal: boolean,
-}
+  recipe: Recipe[];
+  recipeAdderModal: boolean;
+  recipeModal: boolean;
+  recipeModalState: Recipe;
+};
 
 export type Recipe = {
-    name: string,
-    time: number,
-    description: string,
-    difficulty: string,
-    ingredients: string,
+  name: string;
+  time: number;
+  description: string;
+  difficulty: string;
+  ingredients: string;
 };
